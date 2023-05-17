@@ -1,0 +1,43 @@
+let source = axios.CancelToken.source();
+
+let config = { cancelToken: source.token}
+axios.get(endpointUrl, config).then((res) => {})
+
+or 
+
+axios.get(endpointUrl, { cancelToken: source.token}).then((res) => {})
+
+source.cancel() we can use to stop execution
+
+
+
+==== in native ===
+
+const controller = new AbortController();
+
+const signal = controller.signal;
+
+fetch(url, { signal: signal}).then(res => {})
+controller.abort();
+
+
+==== how to configure AXIOS for common ===
+1===
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:1010/'
+axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
+export default axios;
+
+2====
+let token=localStorage.getItem("token");
+
+var myAxios=axios.create({
+  baseURL: 'https://localhost:5001',
+  timeout: 700,
+  headers: {'Authorization': `bearer ${token}`}
+});
+
+export default myAxios;
+then i import myaxios to my file and
+
+myAxios.get("sth")

@@ -1,0 +1,33 @@
+var obj1 = {
+  valueOfThis: function () {
+    return this;
+  }
+}
+var obj2 = {
+  valueOfThis: () => {
+    return this;
+  }
+}
+
+console.log(obj1.valueOfThis()); // Will return the object obj1
+console.log(obj2.valueOfThis()); // Will return window/global object
+
+
+const parent = {
+  mom_name: "Samantha Quinn",
+  mother: function() {
+    setTimeout(function(){ //this is regular function. having it's own this. return global window object
+    console.log(this.mom_name) // undefined. 
+    },100)  
+    setTimeout(()=>{ //not having it's own this. it use laxical scope. it's just parent is mother method
+    console.log(this.mom_name) // "Samantha Quinn". 
+    },100) 
+  },
+};s
+console.log(parent.mother());
+
+general definition, the this keyword always refers to the object that is calling the function
+  you can see in the code above, obj1.valueOfThis() returns obj1, since this keyword refers to the object calling the function.
+
+In the arrow functions, there is no binding of the this keyword.
+The this keyword inside an arrow function, does not refer to the object calling it.It rather inherits its value from the parent scope which is the window object in this case.

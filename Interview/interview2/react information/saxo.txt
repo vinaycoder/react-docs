@@ -1,0 +1,38 @@
+function anagram(a, b) {
+  var c = a.replace(/\W+/g, '').toLowerCase().split("").sort().join("");
+  var d = b.replace(/\W+/g, '').toLowerCase().split("").sort().join("");
+  return (c === d) ? true : false;
+}
+console.log(anagram('acb','bca'))
+
+
+
+Validator = (braces) => { // define function and parameter braces
+  while (/\(\)|\[\]|\{\}/g.test(braces)) { // while there are still any of these left
+    braces = braces.replace(/\(\)|\[\]|\{\}/g, "") // keep replacing with ''
+  }
+  return !braces.length; // return the opposite of brace.length after that 
+  // 0 becomes 1 and 1 becomes 0
+}
+console.log(Validator('[({})]'));
+workday
+
+1. only one proc code is working
+addon===
+2. outline indicator
+3. primary code
+4. serivce res should be array
+
+5================
+function test(){
+console.log('vinay')
+}
+test.paara=1234
+what will be the output // 1234
+
+6===================
+.1+0.2= 0.30000000000000004 because of machine processor. like 32 bit or 64 bit
+
+7.=====================
+can we add key in <></> fragment : no // will with full syntax
+

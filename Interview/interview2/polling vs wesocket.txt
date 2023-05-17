@@ -1,0 +1,21 @@
+Short Polling
+  Short polling is an AJAX-based timer that calls at fixed delays.
+    It sends an empty response
+    It sends data object in its body (JSON Object)
+
+  Lot of request that are processed as they come on server. Creates a lot of traffic (uses resources, but frees them as soon as response is send back):
+example :  we can use this for delivery boy location
+
+
+Long Polling
+Long Polling works differently from short polling in the following way:
+
+Client makes a request to the server
+Server can respond in two ways:
+  1 If it has some new data available, it can respond right away.
+  2 If it doesn't have anything new data, it will keep that connection open for a period of time and when it receives new data it will respond back with updated data. if timeout happen again start connection and call to the server
+
+
+WebSocket 
+WebSocket is a computer communication protocol that provides full-duplex communication channels over a single TCP connection. server can send data to client and client can send data to the server any time
+example : whatsapp

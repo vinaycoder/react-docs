@@ -1,0 +1,44 @@
+1. Difference While both useMemo and useCallback remember something between renders until the dependancies change, the difference is just what they remember.
+
+useMemo will remember the returned value from your function.we called function inside UseMemo and returns it's value.
+
+const calculation = useMemo(() => expensiveCalculation(count), [count]);
+
+useCallback will remember your actual function. it return a callback function. which can be called be later
+
+const calculation = useMemo(() => {expensiveCalculation(count)}, [count]);
+
+
+
+useMemo focuses on avoiding heavy calculation.
+
+useCallback focuses on a different thing: it fixes performance issues when inline event handlers like onClick={() => { doSomething(...); } cause PureComponent child re-rendering (because function expressions there are referentially different each time)
+
+This said, useCallback is closer to useRef, rather than a way to memoize a calculation result.
+
+Looking into the docs I do agree it looks confusing there.
+
+useCallback will return a memoized version of the callback that only changes if one of the inputs has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders (e.g. shouldComponentUpdate).
+
+This is because of something called "referential equality".
+Every time a component re-renders, its functions get recreated. Because of this, the addTodo function has actually changed.
+
+
+
+
+========temporal dead zone in javascript======
+This is what the TDZ is: the term to describe the state where variables are un-reachable. They are in scope, but they aren't declared.
+
+The let and const variables exist in the TDZ from the start of their enclosing scope until they are declared
+
+ yes, let and const hoist but you cannot access them before the actual declaration is evaluated at runtime.
+
+===what is synthetic event in react js
+So whenever we are triggering an event in a React component, we are not actually dealing with the real DOM event, instead, we are dealing with React's custom event type, a synthetic event. there fore we can use same event as like to the normal application. React has create a wrapper on original function. so that we can use cross browser
+
+==== useEffect for component will unmount ===
+React.useEffect(() => {
+  return () => {
+    console.log(props.current);
+  };
+}, [props.current]);

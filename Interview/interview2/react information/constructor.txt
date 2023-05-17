@@ -1,0 +1,146 @@
+1. constructor
+a constructor function is used to create objects
+function FirstConstructor(firstName,lastName){
+  this.firstName=firstName
+  this.lastName=lastName
+  this.getName=function(){
+    console.log(this.firstName +' '+this.lastName);
+  }
+
+}
+let nameDetails=new FirstConstructor('vinay','kumar');
+console.log(nameDetails.getName());
+
+2. prototype===
+A prototype is a blueprint of an object. Prototype allows us to use properties and methods on an object even if the properties and methods do not exist on the current object.
+All javascript objects inherit properties from a prototype.
+Date objects inherit properties from the Date prototype
+Math objects inherit properties from the Math prototype
+Array objects inherit properties from the Array prototype.
+
+3.==== inheritance===
+class inheritance is a way for one class to extend another class.
+
+class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  run(speed) {
+    this.speed = speed;
+    alert(`${this.name} runs with speed ${this.speed}.`);
+  }
+  stop() {
+    this.speed = 0;
+    alert(`${this.name} stands still.`);
+  }
+}
+
+let animal = new Animal("My animal");
+
+class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+}
+//////////////Rabit class inherit the Animal class
+let rabbit = new Rabbit("White Rabbit");
+
+rabbit.run(5); // White Rabbit runs with speed 5.
+rabbit.hide(); // White Rabbit hides!
+
+==== The super keyword refers to the parent class. it is used to call parent constructor and method in child class.
+////super.method(...) to call a parent method.
+////super(...) to call a parent constructor (inside our constructor only).
+
+///
+class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+
+  stop() {
+    super.stop(); //===== call parent stop
+    this.hide(); // and then hide
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit");
+
+////////////// constructor overRide
+class Rabbit extends Animal {
+
+  constructor(name, earLength) {
+    this.speed = 0;
+    this.name = name;
+    this.earLength = earLength;
+  }
+
+  // ...
+}
+
+https://javascript.info/class-inheritance
+
+
+==///////==== protoType inheritance==
+//SuperType constructor function
+function SuperType(){
+	this.name = "Virat"
+}
+
+//SuperType prototype
+SuperType.prototype.getSuperName = function(){
+	return this.name
+}
+
+//SubType prototype function
+function SubType(){
+	this.age = 26
+}
+
+//Inherit the properties from SuperType
+SubType.prototype = new SuperType();
+
+//Add new property to SubType prototype
+SubType.prototype.getSubAge = function(){
+	return this.age;
+}
+
+//Create a SubType object
+var subTypeObj = new SubType();
+console.log(subTypeObj.name); //Output: Virat
+console.log(subTypeObj.age); //Output: 26
+console.log(subTypeObj.getSuperName()); //Output: Virat
+console.log(subTypeObj.getSubAge()); //Output: 26
+
+
+===== prototype and __proto__ in javascript  ========
+note:   every function having the .prototype object and 
+	every object having the .__prto__ ===  Object.prototype 
+	every array have the arrayVariable.__proto__ ===  Array.prototype object
+	arrayVariable.__proto__.__proto__===Object.prototype
+
+The __proto__ is an object within every object that points out (references) the prototype that has been set for that object
+
+The prototype property is only present for functions and is a property that’s set only if you’re using the ‘new’ keyword when creating objects with this (constructor) function. 
+
+instance.__proto__ === constructor.prototype // true
+    
+var a = { name: "wendi" };
+a.__proto__ === Object.prototype // true
+Object.getPrototypeOf(a) === Object.prototype // true
+
+function Foo() {};
+var b = new Foo();
+b.__proto__ === Foo.prototype
+b.__proto__.__proto__ === Object.prototype
+
+2. what is different between class based and prototype based inheritance.
+class based : 
+1. we can not add or modify method on run time
+2. it's more complex to compare to prototype
+protitype bases:
+ 1. we can add or modify method on run time
+2. it's more easy to compare to prototype
+
+

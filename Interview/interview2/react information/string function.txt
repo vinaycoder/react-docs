@@ -1,0 +1,27 @@
+==== 
+slice(start, end)
+	let str = "Apple, Banana, Kiwi";
+	str.slice(7, 13)     // Returns Banana
+
+	let str = "Apple, Banana, Kiwi";
+	str.slice(-12, -6)    // Returns Banana
+
+substring(start, end)
+	substring() is similar to slice().
+	The difference is that substring() cannot accept negative indexes.
+
+	let str = "Apple, Banana, Kiwi";
+	substring(7, 13)    // Returns Banana
+
+substr(start, length)
+	substr() is similar to slice(). 
+
+	The difference is that the second parameter specifies the length of the extracted part.
+	
+	let str = "Apple, Banana, Kiwi";
+	str.substr(7, 6)    // Returns Banana
+
+The search() method cannot take a second start position argument.
+The indexOf() method cannot take powerful search values (regular expressions).
+console.log([1, 2, 3].indexOf(5)); // -1
+console.log([1, 2, 3].indexOf(2)); // 0

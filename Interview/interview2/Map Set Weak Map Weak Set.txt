@@ -1,0 +1,58 @@
+1. why map=================
+Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+
+let map = new Map();
+
+map.set('1', 'str1');   // a string key
+map.set(1, 'num1');     // a numeric key
+map.set(true, 'bool1'); // a boolean key
+
+
+alert( map.get(1)   ); // 'num1'
+alert( map.get('1') ); // 'str1'
+alert( map.size ); // 3
+
+2. why set======
+A Set is a special type collection – “set of values” (without keys), where each value may occur only once. it store unique values
+
+let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits, some users come multiple times
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set keeps only unique values
+alert(set.size); // 3
+console.log(set.name);
+for (let user of set) {
+  console.log(user.name); // John (then Pete and Mary)
+}
+
+
+3. new WeakMap()=====
+	it accept key as object only. we can not use as map
+let weakMap = new WeakMap();
+let obj = {};
+weakMap.set(obj, "ok"); // works fine (object key)
+
+	after override reference is getting store with Map but in weakMap it deleted from everyWhere
+let john = { name: "John" };
+let weakMap = new WeakMap();
+weakMap.set(john, "...");
+john = null; // overwrite the reference
+
+WeakMap does not support iteration and methods keys(), values(), entries(), so there’s no way to get all keys or values from it.
+
+
+4. WeakSet===
+	WeakSet behaves similarly:
+	It is analogous to Set, but we may only add objects to WeakSet (not primitives).
+
+Math.round(Math.random(10)*10)

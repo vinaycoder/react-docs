@@ -1,0 +1,64 @@
+1=== why property is not deleted.. with object.create
+var myD = {
+  name: 'vinay',
+  height: 15
+}
+var obj = Object.create(myD)
+
+obj.height=null
+delete myD.height
+delete obj.height
+console.log(obj.height);
+****Because:object.create method create object with ref of another object. so we have to delete main object also
+ 
+2===== what is different bet object.create and object.assign
+Object.create creates a new object with the specified [[Prototype]], and Object.assign assigns the properties directly on the specified object:
+
+var target1 = {}, target2 = {};
+var obj1 = Object.create(target1, { myProp: { value: 1 } });
+var obj2 = Object.assign(target2, { myProp: 1 });
+console.log(obj1 === target1); false
+console.log(obj2 === target2); true
+
+======
+Shallow Copy: 
+When a reference variable is copied into a new reference variable using the assignment operator, a shallow copy of the referenced object is created. In simple words, a reference variable mainly stores the address of the object it refers to
+
+var employee = {
+    eid: "E102",
+    ename: "Jack",
+    eaddress: "New York",
+    salary: 50000
+}
+  
+  
+console.log("Employee=> ", employee);
+var newEmployee = employee; // Shallow copy
+
+Deep Copy: 
+Unlike the shallow copy, deep copy makes a copy of all the members of the old object, allocates separate memory location for the new object and then assigns the copied members to the new object. In this way, both the objects are independent of each other and in case of any modification to either one the other is not affected
+
+var employee = {
+    eid: "E102",
+    ename: "Jack",
+    eaddress: "New York",
+    salary: 50000
+}
+
+var newEmployee = JSON.parse(JSON.stringify(employee));
+
+**** pure function vs impure function in javascript ***
+Pure : a pure function will always return same output for the same input
+pure functions are function that accept an input and return a value without modifying any data outside its scope
+var x=10;
+function add(x){
+console.log(x)
+return x+1
+}
+
+impure : a function that change value of outside scope
+var x=10
+function add(){
+console.log(x)
+x++
+}

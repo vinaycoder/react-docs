@@ -1,0 +1,8 @@
+•	PUT method is called when you have to modify a single resource while POST method is called when you have to add a child resource.
+•	PUT method response can be cached but you cannot cache POST method responses.
+•	You can use UPDATE query in PUT whereas you can use create query in POST.
+•	In PUT method, the client decides which URI resource should have, and in POST method, the server decides which URI resource should have.
+•	PUT works as specific while POST work as abstract.
+•	If you send the same PUT request multiple times, the result will remain the same but if you send the same POST request multiple times, you will receive different results.
+•	PUT method is idempotent whereas POST method is not idempotent.
+

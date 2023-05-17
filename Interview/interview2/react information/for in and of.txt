@@ -1,0 +1,29 @@
+For IN with object and array
+// The JavaScript for in statement loops through the properties of an Object:
+The JavaScript for in statement can also loop over the properties of an Array:
+
+const person = { fname: "John", lname: "Doe", age: 25, age: 50 };
+let txt = "";
+for (let x in person) {
+  console.log(x);  // fname  lname  age
+  console.log(person[x]);  // John  Doe  50
+ 
+}
+
+const numbers = [45, 16, 25];
+let txt1 = "";
+for (let x2 in numbers) {
+  console.log(x2);  // 0 1 2
+  console.log(numbers[x2]);  // 45 16 25
+  
+}
+
+The For Of Loop
+The JavaScript for of statement loops through the values of an iterable object.
+
+const cars = ["BMW", "Volvo", "Mini"];
+
+let text = "";
+for (let x of cars) {
+  text += x + "<br>"; // BMW Volvo  Mini
+}

@@ -1,0 +1,12 @@
+let a =true
+setTimeout(()=>{
+a=false
+},2000)
+
+while(a){
+console.log('Hello);
+}
+
+Hello will continously printed. a will never set to false.javascript is a single thread language. after 2 second a will be set to false if current thread will be free but current thread is busy in loop so a will never set to false
+
+mutation observable : mutataion in Dom tree

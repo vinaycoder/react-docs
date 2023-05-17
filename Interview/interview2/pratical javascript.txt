@@ -1,0 +1,23 @@
+let number = 0;
+console.log(number++);  0
+console.log(++number);  2
+console.log(number);  2
+
+
+function getAge() {
+  'use strict';
+  age = 21;
+  console.log(age);
+}
+getAge();   // refenece error
+
+console.log(1 + "2" + "2");   122
+console.log(1 + +"2" + "2");   32
+console.log(0.1 + 0.2);        0.30000000000000004
+console.log(0.1 + 0.2 == 0.3);  false
+
+
+
+for (var i = 0; i < 5; i++) { setTimeout(function() { console.log(i); }, i * 1000 ); }
+5 five times
+

@@ -1,0 +1,18 @@
+1 fetch and axios
+2 definition of clousers
+React.memo
+
+4 state is updating and props is updatng. but need to update
+
+6 there is a page where name,phone and submit are fields after click on submit call a api then send respone on another page,
+
+11 continous integartion and continous delivery
+
+
+
+function ReverseString(str) { 
+   return str.split('').reverse().join('') 
+} 
+
+var arr=[8, 7, 5, 3, 3, 0, 9, 1];
+console.log(new Set(arr)); // unique array

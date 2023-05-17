@@ -1,0 +1,5 @@
+Cross-Origin Resource Sharing (CORS)
+
+ The web pages and APIs are often in different domains. This introduces security issues in that any website can request data from an API. Cross-Origin Resource Sharing (CORS) provides a solution to these issues
+
+"Header set Access-Control-Allow-Origin "*"

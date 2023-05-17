@@ -1,0 +1,12 @@
+
+function fact(num){
+  let fact =1;
+  for (let i = 1; i <= num; i++) {
+    fact=fact*i
+  }
+  return fact;
+}
+console.log(fact(21))    //   51090942171709440000
+console.log(fact(22).toLocaleString())  // 1124000727777607700000
+console.log(fact(22).toLocaleString('fullwide', { useGrouping: false }))  // 1,124,000,727,777,607,700,000
+

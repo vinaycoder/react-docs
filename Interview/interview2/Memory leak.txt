@@ -1,0 +1,29 @@
+1 what is Memory leak in javascript
+	we have limited the memory so can we use memory and release memory for another task to OS. but some where we have 	allocated memory but there are no longer use but still occupied that memory. that piece of memory is not being 	release to os so that os we re allocate to another task.
+
+For More details :  https://medium.com/preezma/memory-leaks-in-javascript-and-how-to-avoid-them-63916a02f68
+
+=== The four types of common JavaScript leaks==
+
+1.Undeclared/ Global Variables
+	undeclared variables: a reference to an undeclared variable creates a new variable inside the global object
+
+2.Forgotten timers or callbacks
+	Having a setTimeout or a setInterval referencing some object in the callback is the most common way of preventing 	the object from being garbage collected
+
+3.Out of DOM references (Event listeners)
+	Active event listener will prevent all variables captured in its scope from being garbage collected. Once added, the 	event listener will remain in effect until:
+
+	explicitly removed with removeEventListener()
+
+4.Closures
+	
+
+====Memory lifecycle=====
+
+	Memory allocation: 
+	Use memory
+	Release memory
+
+==== Memory allocation  ====
+	JavaScript has two storage options for memory allocation. One is the stack, and the other is the heap. All the 	primitive types, like number, Boolean, or undefined will be stored on the stack. Heap is the place for reference 	types like objects, arrays, and functions.

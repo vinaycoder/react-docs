@@ -1,0 +1,45 @@
+Connect function : provide connection current comonent to store
+
+mapStateToProps
+As the first argument passed in to connect, mapStateToProps is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
+
+It is called every time the store state changes.
+It receives the entire store state, and should return an object of data this component needs.
+
+function mapStateToProps(state, ownProps /* not mandatory */) {
+  return {
+    a: 42,
+    todos: state.todos,
+    filter: state.visibilityFilter,
+  }
+}
+
+mapDispatchToProps
+As the second argument passed in to connect, mapDispatchToProps is used for dispatching actions to the store.
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // dispatching plain actions
+    increment: () => dispatch({ type: 'INCREMENT' }),
+    decrement: () => dispatch({ type: 'DECREMENT' }),
+    reset: () => dispatch({ type: 'RESET' }),
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps /* not mandatory */) => {
+  return {
+    // dispatching actions returned by action creators
+    increment: () => dispatch(increment()),
+    decrement: () => dispatch(decrement()),
+    reset: () => dispatch(reset()),
+  }
+}
+
+Note : 
+If you don't specify the second argument to connect(), your component will receive dispatch by default. For example:
+
+connect()(MyComponent)
+// which is equivalent with
+connect(null, null)(MyComponent)
+
+// or
+connect(mapStateToProps /** no second argument */)(MyComponent)

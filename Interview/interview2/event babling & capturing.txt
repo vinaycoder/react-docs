@@ -1,0 +1,96 @@
+1. event bubling. ( " Inner to Outer " )==============
+	when any event is firing on html element.first will call that specific event function then it will 	automatic firing the event on parent of that specific element. By default event bubling is fired
+will call body -> will Head
+<div onclick=(console.log('div))>
+    <ul onclick=(console.log('ul))>
+        <li onclick=(console.log('li))></li> click on this
+    </ul>
+</div>
+li
+ul
+div
+
+2. event capturing (outer to inner)=================
+	it is opposite of bubling. first parent will call then child will call.
+
+<div onclick=(console.log('div))> click on this
+    <ul onclick=(console.log('ul))>
+        <li onclick=(console.log('li))></li> 
+    </ul>
+</div>
+
+div
+ul
+li
+ How to use capturing because bubling is default behaviour
+ var li = document.querySelector("li")
+ var ul = document.querySelector("ul")
+ var div = document.querySelector("div") click here
+
+div.addEventListener("click",()=>{
+console.log('div)
+},true)
+
+ul.addEventListener("click",()=>{
+console.log('ul')
+},true)
+
+li.addEventListener("click",()=>{
+console.log('li')
+},true)
+div
+ul
+li
+
+3. stopPropagation============
+	if we want to stop behaviour of event babling. just inside function event.stopPropagation()
+
+4. stopImmediatePropagation ===============
+	on same element we can use multiple event fo if we want to stop  execution next all event tjthen we can use this funciton
+
+li.addEventListener("click",()=>{
+console.log('li 1')
+})
+
+li.addEventListener("click",()=>{
+console.log('li 2')
+event.stopImmediatePropagation()
+})
+
+li.addEventListener("click",()=>{
+console.log('li 3')
+})
+li 1
+li 2
+
+5. event.PreventDefault 
+	when we want to stop the default behaviour of any event then we can use this function
+anchor onclick event is default behaviour is it will refresh the page. but if we want to stop we can use this
+
+6. event deligation===============
+
+Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+Example ??????
+const customUl = document.createElement('ul');
+for (var i = 1; i <= 10; i++) {
+    const newElement = document.createElement('li');
+    newElement.textContent = "This is line " + i;
+    newElement.addEventListener('click', () => {
+        console.log('Responding')
+    })
+    customUI.appendChild(newElement);
+}
+
+example for ddd
+const customUl = document.createElement('ul');
+
+function responding() {
+    console.log('Responding')
+}
+
+for (var i = 1; i <= 10; i++) {
+    const newElement = document.createElement('li');
+    newElement.textContent = "This is line " + i;
+    newElement.addEventListener('click', responding)
+    customUI.appendChild(newElement);
+}

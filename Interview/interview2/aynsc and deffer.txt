@@ -1,0 +1,7 @@
+defer attribute: First it will download the script file and then wait of html parsing. After the end of html parsing, script will execute. In other words, It will guarantee all the scripts will execute after the html parsing.
+
+Defer attribute is useful when script is using for DOM manipulations. Means script will apply on document html.
+
+async attribute: It will download the script file and execute without wait the end of html parsing. In other words, It will not guarantee all the scripts will execute after the html parsing.
+
+Async attribute is useful when script is not using for DOM manipulation. Some time you need script only for server side operations or for handling cache or cookie but not for DOM manipulations. Means script is not related to the used html.

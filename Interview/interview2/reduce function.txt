@@ -1,0 +1,81 @@
+const topSix = [
+  { name: "Nigeria", position: "1st", points: 43 },
+  { name: "England", position: "2nd", points: 37 },
+  { name: "USA", position: "3rd", points: 35 },
+  { name: "South Africa", position: "4th", points: 30 },
+  { name: "Brazil", position: "5th", points: 27 },
+  { name: "Korea", position: "6th", points: 23 }
+]
+//----get count-----
+  /*
+    const countPoints = topSix.reduce((callBackFun, initailValue) => callBackFun + initailValue.points,0)
+    console.log(countPoints)
+  */
+
+//--- get count accurance on item -----
+
+const fruits = ['Banana', 'Orange', 'Apple', 'Orange', 'Pear', 'Banana']
+/*
+const getCOuntItem = fruits.reduce((acc, currFruit) => { return { ...acc, [currFruit]: (acc[currFruit] || 0) + 1 }}, {})
+console.log(getCOuntItem)
+*/
+
+//---- Converting Between Types Using--   we are getting extracted array here
+const students = [
+  { name: "Kingsley", score: 70 },
+  { name: "Jack", score: 80 },
+  { name: "Joe", score: 63 },
+  { name: "Beth", score: 75 },
+  { name: "Kareem", score: 59 },
+  { name: "Sarah", score: 93 }
+]
+/*
+const getNameOnly = students.reduce((acc, currentValue) => [...acc, acc[currentValue]= currentValue.name ],[])
+console.log(getNameOnly)
+*/
+
+//  --- get extracted value --- get some value
+
+const studentsArray = [
+  { name: "Kingsley", score: 70, position: "1st" },
+  { name: "Jack", score: 80, position: "2nd" },
+  { name: "Joe", score: 63, position: "3rd" },
+  { name: "Beth", score: 75, position: "4rd" },
+  { name: "Kareem", score: 59, position: "5th" },
+  { name: "Sarah", score: 93, position: "6th" }
+]
+
+/*
+const getNameAndScore = studentsArray.reduce((acc, student) => { return { ...acc, [student.name]: student.score }},{})
+console.log(getNameAndScore)
+*/
+
+// --- get min and max by reduce
+
+const studentsArr = [
+  { name: "Kingsley", score: 70 },
+  { name: "Jack", score: 80 },
+  { name: "Joe", score: 63 },
+  { name: "Beth", score: 75 },
+  { name: "Kareem", score: 59 },
+  { name: "Sarah", score: 93 }
+]
+
+/*
+const max = studentsArr.reduce((acc, student) => {
+  if (acc === null || student.score > acc)
+    return student.score
+  return acc
+}, null)
+
+console.log(max) // Prints 93
+*/
+
+const min = students.reduce((acc, student) => {
+  if (acc === null || student.score < acc) {
+    return student.score
+  }
+  return acc
+}, null)
+
+console.log(min) // Prints 59

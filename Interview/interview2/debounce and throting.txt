@@ -1,0 +1,21 @@
+const debounce = (func, delay) => {
+  let debounceTimer
+  return function () {
+    const context = this
+    const args = arguments
+    clearTimeout(debounceTimer)
+    debounceTimer
+      = setTimeout(() => func.apply(context, args), delay)
+  }
+}
+
+function test(){
+  console.log('Hi this is debounce function')
+}
+const funde = debounce(test,1000)
+
+console.log(funde())
+console.log(funde())
+console.log(funde())
+console.log(funde())
+console.log(funde())

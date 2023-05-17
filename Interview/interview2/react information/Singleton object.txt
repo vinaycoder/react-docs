@@ -1,0 +1,9 @@
+===what is Singleton  ====
+A Singleton is an object which can only be instantiated one time. Repeated calls to its constructor return the same instance and this way one can ensure that they don't accidentally create multiple instances.
+var singleton = new (function() {
+  var bar = 123
+
+  this.foo = function() {
+    // Whatever
+  }
+})()

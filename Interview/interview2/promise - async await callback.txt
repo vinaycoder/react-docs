@@ -1,0 +1,109 @@
+Promises:
+
+A Promise in NodeJS is similar to a promise in real life. It is an assurance that something will be done
+
+2. Async/Await:
+
+Async/Await is used to work with promises in asynchronous functions. It is basically syntactic sugar for promises. It is just a wrapper to restyle code and make promises easier to read and use. It makes asynchronous code look more like synchronous/procedural code, which is easier to understand.
+
+What is Chaining?
+
+Sometimes we need to call multiple asynchronous requests, then after the first Promise is resolved (or rejected), a new process will start to which we can attach it directly by a method called chaining.
+
+different bwt Promises and Async/Await:
+
+1 Promise has 3 states – resolved, rejected and pending.
+	async : It does not have any states. It returns a promise either resolved or rejected.
+2. Error handling is done using .then() and .catch() methods
+	async: Error handling is done using .try() and .catch() methods.
+3. Promise chains can become difficult to understand sometimes.
+	Using Async/Await makes it easier to read and understand the flow of the program as compared to promise chains.
+
+Promise.reject() returns a rejected promise.
+Promise.resolve() returns a resolved promise.
+Promise.all() 
+//It resolves once all promises in the array resolve, or reject as soon as one of them rejects
+takes an array (or any iterable) and returns a promise that resolves when all of the promises in the iterable argument have resolved, or rejects with the reason of the first passed promise that rejects.
+
+Promise.race() 
+takes an array (or any iterable) and returns a promise that resolves with the value of the first resolved promise in the iterable, or rejects with the reason of the first promise that rejects.
+
+==== callback=====
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+
+====== promise =======
+
+let myPromise = new Promise(function (resolve, reject) {
+  setTimeout(function () { resolve("I love You !!"); }, 3000);
+});
+
+myPromise
+.then(function (value) {
+  console.log(value)
+})
+.catch(function(err){
+  console.log(err)
+})
+
+====== async & await  ======
+
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  console.log('call completed');
+}
+
+asyncCall();
+
+==== promise.all ======
+It resolves once all promises in the array resolve, or reject as soon as one of them rejects. if any of one is rejected then will go to catch and return error.
+
+const promise1= new Promise((resolve,reject) => {
+ resolve('promise 1 resolved')
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  resolve('promise 2 resolved')
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  resolve('promise 3 resolved')
+});
+
+Promise.all([promise1, promise2, promise3])
+  .then(result=>{
+    console.log(result) //(3)[ promise 1 resolved,promise 2 resolved,promise 3 resolved ]
+  })
+  .catch(error=>{
+    console.log(error)
+  })
+
+==== note : if we want that if ignore rejected promise. means if any promise is rejected but we want to get resolved result.===
+Promise.all([
+  promise1.catch(error=>error),
+  promise2.catch(error => error),
+  promise3.catch(error => error)
+   ])
+  .then(result=>{
+    console.log(result)//[promise 1 resolved, error in promise 2, promise 3 resolved ]
+  })
+
+

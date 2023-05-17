@@ -1,0 +1,85 @@
+function sum(a, b) {
+  return a + b
+}
+function substration(a, b) {
+  return a - b
+}
+function multiple(a, b, c) {
+  return a * b * c
+}
+const test = generic();
+console.log(test(1, 2));
+console.log(test(5, 2));
+console.log(test(1, 2, 3));
+function generic(a,b,c) {
+  let counter=0;  
+ return function b(a,b,c){
+   counter++
+   
+   if (counter === 1){
+     return sum(a,b)
+   }
+   if (counter === 2) {
+     return substration(a, b)
+   }
+   if (counter === 3) {
+     return multiple(a, b, c)
+   }
+   
+ }
+}
+
+==========
+function greetingBirthday(message){
+return function(name){
+  return message + ' ' + name;
+}
+}
+const BirthdayMesaage = greetingBirthday('Happy Birthday Dear');
+console.log(BirthdayMesaage('vinay')); // Happy Birthday Dear vinay
+console.log(BirthdayMesaage('Amit')); // Happy Birthday Dear Amit
+
+=======
+uses a variable i which is declared outside of itself. The variable i is actually declared within the for loop and the inner function accesses it. So when the for loop is done running, each of the inner functions refers to the same variable i, which at the end of the loop is equal to 3.
+for( var i = 0; i < 10; i++ ) {
+  (function(i){
+    setTimeout(function(){
+      console.log(i)
+    })
+  })(i)
+}
+=====
+just use let instead of var, so every closure binds the block-scoped variable
+for (let i = 0; i<3; i++) {
+	setTimeout(function(){ alert(i); }, 1000*i);
+}
+=====
+write a function provide below access
+var addSix = createBase(6);
+addSix(10); // returns 16
+addSix(21); // returns 27
+Ans....
+function createBase(a){
+  return function(b){
+    return a+b
+  }
+}
+=========
+3How would you use a closure to create a private counter
+Ans : create clouser function and return object with a function to set the counter value.
+function counter() {
+  var _counter = 0; // private variable
+  return {
+    add: function(increment) { _counter += increment; },
+    retrieve: function() { return 'The counter is currently at: ' + _counter; }
+  }
+}
+
+// error if we try to access the private variable like below
+// _counter;
+
+// usage of our counter function
+var c = counter();
+c.add(5); 
+c.add(9); 
+c.retrieve(); // => The counter is currently at: 14

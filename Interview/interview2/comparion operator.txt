@@ -1,0 +1,32 @@
+2 < 12		true	
+2 < "12"	true	
+2 < "John"	false	
+2 > "John"	false	
+2 == "John"	false
+console.log(7>6>5) false 
+"2" < "12"	false	
+"2" > "12"	true	
+"2" == "12"	false
+note 1 :when we comaparing the number with string, string converted into NaN then comparing. therefor it's return always false like 2 > "John"
+
+note 2: "2" > "12" =true when comparing two number with string quote. it will compare first character of both side(2 > 1)
+console.log(7>6>5) false == 7>6 =true =1 then 1 > 5 ==no it's false
+decorate
+resize functio
+create http
+
+
+2=="2" true
+2==="2" false
+[]==[] false
+[]===[] false
+[1,2]==[1,2] false
+{}=={}	false
+{}==={} false
+console.log(.1+0.2==0.3); false 
+
+Note 1 : here two array or Object. it comparing it's referece. here referece is not same 
+
+JSON.stringify({ 1: 1 }) == JSON.stringify({ 1: 1 }) true
+JSON.stringify([1,2]) == JSON.stringify([1,2]) true
+
