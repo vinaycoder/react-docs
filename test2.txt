@@ -1,0 +1,69 @@
+function func() {
+  let a = b = 100;
+  console.log(a) // line 1
+  console.log(b) // line 2
+  return a;
+}
+func();
+100
+100
+console.log(a) // line 3
+console.log(b) // line 4
+
+
+// [1,2,3,4,5]
+//[{1:1}, {2:2}, {3:3},{4:4}, {5:5}]
+// function returnFN(arr){
+//   const finalarr=new Map();
+//   arr.map(item=>{
+//     finalarr.set(item,item)
+//     // finalarr.push({item:item})
+//   })
+//   return finalarr;
+// }
+// console.log(returnFN([1, 2, 3, 4, 5]))
+
+
+
+// const obj={
+//   name:'Vinay',
+//   getThis:function(){
+//     console.log(this);
+//   },
+//   getThis2:()=>{ console.log(this)}
+// }
+// console.log(obj.getThis2())
+// console.log(obj.getThis())
+
+
+******* print 1 to 10 after 2 second  ********
+
+  for (let i = 1; i <= 10; i++) {
+    setTimeout(() => {
+      console.log(i)
+    }, i * 2000)
+  }
+
+
+**** print double array element *** using map and foreach ****
+
+const testArr=[1,2,3,4,5]
+const newArr=testArr.map(item=>item*2)
+
+testArr.forEach((item1,index)=>{
+  testArr[index]=item1*2
+  })
+console.log(testArr)
+
+******  2nd last array with reduce *****
+
+
+***** count age of every elements ****
+// const users = [{ age: '23', name: 'x' }, { age: '24', name: 'y' }, { age: '24', name: 'z' },{age:23,name:'w'}]
+// output // { '23': '2', '24': '2' } count of age
+
+
+**** 2nd max in array ****
+
+const tttt=['20', '120', '111', '215', '54', '78'].sort(function (a, b) { return b - a; })[1];
+console.log(tttt)

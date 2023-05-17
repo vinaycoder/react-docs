@@ -1,0 +1,5 @@
+1. how to get previous state counter in react hooks
+2. why setState and useState is a asyny 
+3 div p ,  div > p selector in html
+
+

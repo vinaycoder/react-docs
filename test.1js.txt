@@ -1,0 +1,101 @@
+// Mayank Garg3: 03 PM
+ function call() {
+   var a = b = 10;
+ }
+ call();
+ console.log(b);
+ console.log(a);
+// Mayank Garg3: 05 PM
+
+
+
+// var b = 15;
+// function foo() {
+//   var b = 5;
+
+//   function baz() {
+//     console.log(b)
+//   }
+//   exec(baz);
+// }
+
+// function exec(func) {
+//   var b = 10;
+//   func();
+// }
+// foo();  //  5
+
+
+// Mayank Garg3: 09 PM
+var name = "Classplus";
+var myObject = {
+  name: "myObject",
+  property: this.name,
+  regularFunction: function () {
+    return this.name
+  },
+  arrowFunction: () => {
+    return this.name;
+  },
+  iife: (function () {
+    return this.name
+  })()
+}
+//this.name  // Classplus
+// myObject.name // myObject
+// myObject.property  // myObject
+// myObject.iife // myObject
+// const regFn = myObject.regularFunction;
+// regFn.call(myObject) // myObject
+// regFn()  // myObject
+//  regFn.call(window) // Classplus
+
+// myObject.arrowFunction.call(myObject) // Classplus
+// myObject.arrowFunction() // Classplus
+
+const debounceFun = (callbackFn, delayTime)=>{
+  let allowCall=true;
+  return function(...args){
+    if (!allowCall) { return };
+    callbackFn()
+    allowCall = false;
+    setTimeout(()=>{
+     
+      allowCall =true;
+      console.log('Hello  ', allowCall, delayTime)
+    },delayTime)
+  }
+
+}
+function testDebon(){
+  console.log('Hello  ')
+}
+
+const fn = debounceFun(testDebon,1000)
+fn()
+fn()
+// fn()
+// fn()
+// fn()
+// fn()
+// fn()
+// fn()
+// fn()
+
+// call(1).add(2).sub(1).mul(3).val();
+// const myObj={
+//   testVal:0,
+
+// }
+
+
+let basic ={
+  name:'vinay',
+  age:27
+}
+
+
+let x = (false == ""); 
+console.log("value of x is :", x);  //true
+
+console.log("20" + 20 + 20 + "20" + (20 + 20))

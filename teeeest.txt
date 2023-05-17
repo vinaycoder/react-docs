@@ -1,0 +1,27 @@
+1. techstack 
+2. optimazation ==page,code performance,serach engine
+3. scalebility users are increasing, data is increasing, developers are increasing 
+
+1.
+debouncing,
+pagination
+pagination with service call
+web socket or any live data updation approch. for live data update
+
+2.
+use React.Profile for details optimazation report
+Lazy loading react 
+use Memo component 
+use usecallback and useMemo hooks
+server side rendering
+
+3.
+
+use loadbalancers on server
+use code version control
+modalerity structure
+
+HTML Component 
+web 3.0 and 3.1
+css4 elements
+dev denedency and depency and peer dependency

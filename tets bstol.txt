@@ -1,0 +1,14 @@
+Dighe, Yogesh (Yogesh) **CTR**04:10 pmif(true){
+if(true){
+var a =10;
+let b = 20;
+const c = 30;
+}
+console.log(a);
+console.log(b);
+console.log(c);
+}
+
+Dighe, Yogesh (Yogesh) **CTR**04:13 pm var x = 21;var test = function () {    console.log(x);    var x = 20;};test();   
+
+let list = [1, 4, 3, 6, 10, 7].map(rec => rec >= 6);

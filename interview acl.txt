@@ -1,0 +1,56 @@
+1. where is we can bind event in react component
+2. api call in constructor
+3. api call in render function
+4. how we can define conditional state.
+5. 
+
+
+
+Mallikarjuna J8:39 AM
+const a;
+const a;
+const a=[1, 2, 10, 20]; a.sort();
+Mallikarjuna J8:40 AM
+0.1 + 0.2 === 0.3 
+
+What is the output?
+You8:41 AM
+false
+Mallikarjuna J8:41 AM
+console.time("loop");
+for (var i = 0; i < 100000000; i+=1)
+{
+
+}
+console.timeEnd("loop);
+
+How will you speed up this?
+Mallikarjuna J8:43 AM
+How do you do Functional Programming in JavaScript?
+Mallikarjuna J8:45 AM
+What happens when you exhaust 5 MB Local Storage ?
+Any 3 steps to ensure page is compatible across
+EDGE
+CHROME
+SAFARI
+Mallikarjuna J8:47 AM
+Semantic Tags, Name them, Benefits
+Which Validators do you use?
+Mallikarjuna J8:48 AM
+Steps to add Web App Manifest
+Your approach to reduce latency/page paint time ?
+Mallikarjuna J8:50 AM
+Is setState is synchrounous
+Warning: Can’t call setState (or forceUpdate) on an unmounted component. 
+
+What does it mean ?
+Mallikarjuna J8:52 AM
+which is bigger & why?
+
+Virtual DOM or Real DOM
+Mallikarjuna J8:53 AM
+How many Redux Store are allowed?
+custom Component Creation Steps
+Mallikarjuna J8:54 AM
+How Lazy Loading works?
+How do you build React App to run offline?
