@@ -7,6 +7,8 @@ console.log(7>6>5) false
 "2" < "12"	false	
 "2" > "12"	true	
 "2" == "12"	false
+alert(2 + 2 + '1' ); 41
+alert('1' + 2 + 2); // "122"
 note 1 :when we comaparing the number with string, string converted into NaN then comparing. therefor it's return always false like 2 > "John"
 
 note 2: "2" > "12" =true when comparing two number with string quote. it will compare first character of both side(2 > 1)
@@ -29,4 +31,19 @@ Note 1 : here two array or Object. it comparing it's referece. here referece is 
 
 JSON.stringify({ 1: 1 }) == JSON.stringify({ 1: 1 }) true
 JSON.stringify([1,2]) == JSON.stringify([1,2]) true
+
+"" + 1 + 0 = "10" // (1)
+"" - 1 + 0 = -1 // (2)
+true + false = 1
+6 / "3" = 2
+"2" * "3" = 6
+4 + 5 + "px" = "9px"
+"$" + 4 + 5 = "$45"
+"4" - 2 = 2
+"4px" - 2 = NaN
+"  -9  " + 5 = "  -9  5" // (3)
+"  -9  " - 5 = -14 // (4)
+null + 1 = 1 // (5)
+undefined + 1 = NaN // (6)
+" \t \n" - 2 = -2 // (7)
 

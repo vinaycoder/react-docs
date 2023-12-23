@@ -43,10 +43,11 @@ let obj = {};
 weakMap.set(obj, "ok"); // works fine (object key)
 
 	after override reference is getting store with Map but in weakMap it deleted from everyWhere
-let john = { name: "John" };
-let weakMap = new WeakMap();
-weakMap.set(john, "...");
-john = null; // overwrite the reference
+
+const wm1 = new WeakMap();
+const o1 = {};
+wm1.set(o1, "37");
+console.log(wm1.get(o1))
 
 WeakMap does not support iteration and methods keys(), values(), entries(), so there’s no way to get all keys or values from it.
 
@@ -54,5 +55,11 @@ WeakMap does not support iteration and methods keys(), values(), entries(), so t
 4. WeakSet===
 	WeakSet behaves similarly:
 	It is analogous to Set, but we may only add objects to WeakSet (not primitives).
+
+   let weakSetObject = new WeakSet();
+    let objectOne = {};
+    // add(value)
+    weakSetObject.add(objectOne);
+
 
 Math.round(Math.random(10)*10)

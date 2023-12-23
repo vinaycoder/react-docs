@@ -1,9 +1,9 @@
 1. event bubling. ( " Inner to Outer " )==============
 	when any event is firing on html element.first will call that specific event function then it will 	automatic firing the event on parent of that specific element. By default event bubling is fired
 will call body -> will Head
-<div onclick=(console.log('div))>
-    <ul onclick=(console.log('ul))>
-        <li onclick=(console.log('li))></li> click on this
+<div onclick="console.log('div')"> 
+    <ul onclick="console.log('ul')"> 
+        <li onclick="console.log('li')">click on this</li> 
     </ul>
 </div>
 li

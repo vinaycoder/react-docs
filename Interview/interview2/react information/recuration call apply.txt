@@ -1,0 +1,80 @@
+4.  Call, Apply, Bind method
+all method allows an object to use the method (function) of another object.
+diff : call method take parameter same as general function,Apply method take parameter as array.bind will take same parameter as call but it return a new 
+	function. we can not call directly as call or apply
+const fullName={
+  firstName:'Vinay',
+  lastName:'Kumar',
+  getFullName:function(city,state){
+    return this.firstName + ' ' + this.lastName + ' from ' + city + ' ' + state 
+  }
+}
+const newObject={firstName:'Amit',lastName:'Singh'}
+
+// console.log(fullName.getFullName('New Delhi', 'Delhi')); // Vinay Kumar from New Delhi Delhi
+
+console.log(fullName.getFullName.call(newObject, 'Patna', 'Bihar')); // Amit Singh from Patna Bihar
+
+console.log(fullName.getFullName.apply(newObject, ['Patna', 'Bihar'])); // Amit Singh from Patna Bihar
+
+// it not return the value as call method. it will return new funciton. after invoke that funciton we will get the return value as call or apply method
+console.log(fullName.getFullName.bind(newObject, 'Patna', 'Bihar')); // return function
+let newFun = fullName.getFullName.bind(newObject, 'Patna', 'Bihar')
+console.log(newFun()); // Amit Singh from Patna Bihar
+
+
+4. recursion ====
+function pow(a,n){
+  if(n>0){
+    return a * pow(a,n-1)
+  }
+  else{
+    return 1
+  }
+}
+console.log(pow(2, 3))//8
+
+5.===== 4,3,2,1
+function countDown(fromNumber) {
+  console.log(fromNumber);
+  let nextNumber = fromNumber - 1;
+  if (nextNumber > 0) {
+    countDown(nextNumber);
+  }
+}
+countDown(3);
+
+6.====== array sum
+function computeSum(arr){
+  if(arr.length === 1){
+    return arr[0];
+  }
+  else{
+    return arr.pop() + computeSum(arr);
+  }
+}
+computeSum([7, 8, 9, 99]); // Returns 123
+
+7.  324, calculate the sum of digits 3 + 2 + 4 = 9
+function sumOfDigits(num) {
+    if (num == 0) {
+        return 0;
+    }
+    return num % 10 + sumOfDigits(Math.floor(num / 10));
+}
+
+8. number between range
+
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+console.log(rangeOfNumbers(5,10))
+
+https://www.codingame.com/playgrounds/5422/js-interview-prep-recursion
+for more question/

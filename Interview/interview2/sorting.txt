@@ -1,0 +1,36 @@
+const aaa=["aaaa","vvvvv","zzz","fffff"]
+console.log(aaa.sort())   // accendingg
+
+const aaa=["aaaa","vvvvv","zzz","fffff"]
+console.log(aaa.sort().reverse())   Deccending
+
+===== number sort ====
+const aaa=[2,1,5,9]
+console.log(aaa.sort())   // accending
+
+const aaa=[2,1,5,9]
+console.log(aaa.sort())   // Deccending
+
+
+== string sorting on array of object ====
+const students = [
+  { name: "Kingsley", score: 70 },
+  { name: "Jack", score: 80 },
+  { name: "Joe", score: 63 },
+  { name: "Beth", score: 75 },
+  { name: "Kareem", score: 59 },
+  { name: "Sarah", score: 93 }
+]
+let test = students.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)) // accending
+let test = students.sort((a, b) => (a.name > b.name) ? -1 : ((b.name > a.name) ? 1 : 0)) // deccending
+
+number sorting for array of objecs
+
+let test = students.sort((a, b) => a.score-b.score)    // accending
+let test = students.sort((a, b) => b.score-a.score)   // deccending
+
+==== date === sorting
+
+array.sort(function (a, b) {
+  return new Date(b.date) - new Date(a.date);
+});

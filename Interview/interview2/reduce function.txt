@@ -1,3 +1,5 @@
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+
 const topSix = [
   { name: "Nigeria", position: "1st", points: 43 },
   { name: "England", position: "2nd", points: 37 },
@@ -19,6 +21,13 @@ const fruits = ['Banana', 'Orange', 'Apple', 'Orange', 'Pear', 'Banana']
 const getCOuntItem = fruits.reduce((acc, currFruit) => { return { ...acc, [currFruit]: (acc[currFruit] || 0) + 1 }}, {})
 console.log(getCOuntItem)
 */
+
+const fruits = ['Banana', 'Orange', 'Apple', 'Orange', 'Pear', 'Banana']
+
+const getCOuntItem = fruits.reduce((acc, currFruit) => { 
+  return {...acc, [currFruit]: acc[currFruit] ? acc[currFruit]+1 : 1} }
+  , {})
+console.log(getCOuntItem)
 
 //---- Converting Between Types Using--   we are getting extracted array here
 const students = [

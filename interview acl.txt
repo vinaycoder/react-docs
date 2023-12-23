@@ -25,7 +25,7 @@ for (var i = 0; i < 100000000; i+=1)
 console.timeEnd("loop);
 
 How will you speed up this?
-Mallikarjuna J8:43 AM
+
 How do you do Functional Programming in JavaScript?
 Mallikarjuna J8:45 AM
 What happens when you exhaust 5 MB Local Storage ?
@@ -39,18 +39,18 @@ Which Validators do you use?
 Mallikarjuna J8:48 AM
 Steps to add Web App Manifest
 Your approach to reduce latency/page paint time ?
-Mallikarjuna J8:50 AM
+
 Is setState is synchrounous
 Warning: Can’t call setState (or forceUpdate) on an unmounted component. 
 
 What does it mean ?
-Mallikarjuna J8:52 AM
+
 which is bigger & why?
 
 Virtual DOM or Real DOM
-Mallikarjuna J8:53 AM
+
 How many Redux Store are allowed?
 custom Component Creation Steps
-Mallikarjuna J8:54 AM
+
 How Lazy Loading works?
 How do you build React App to run offline?
