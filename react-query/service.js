@@ -7,3 +7,14 @@ export const pageLoadApi = (options) => useReactQueries({
   ],
   options: { ...options },
 });
+
+export const PostApi = (options) => useReactQueryMutation({
+  url: postapiUrl,
+  config: {
+    headers: {
+      api_access_key: '',
+    },
+    method: 'POST',
+  },
+  options,
+});
